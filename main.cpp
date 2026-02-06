@@ -5,30 +5,41 @@ using namespace std;
 
 struct Restaurant {
     string name, type, address, city, state;
-    int rating;
+    double rating;
 };
 
-Restaurant addRestaurant(Restaurant&);
+Restaurant addRestaurant();
 
 int main(){
+    // Declarations
+    Restaurant r1;
+
+    cout << "**** RESTAURANT LOG **** \n\n";    // Banner
+    r1 = addRestaurant();
 
     return 0;
 }
 
-Restaurant addRestaurant(Restaurant &r){
+Restaurant addRestaurant() {
+    Restaurant r;
     cout << "Please enter the following information about the restaurant:\n";
     cout << "\tName: ";
-    cin >> r.name;
+    getline (cin, r.name);
+
     cout << "\tCuisine: ";
-    cin >> r.type;
+    getline (cin, r.type);
+
     cout << "\tAddress: ";
-    cin >> address;
+    getline (cin, r.address);
+
     cout << "\tCity: ";
-    cin >> city;
-    cout << "\tState:";
-    cin >> state;
+    getline (cin, r.city);
+
+    cout << "\tState: ";
+    getline (cin, r.state);
+
     cout << "\tRating out of five: ";
-    cin >> rating;
+    cin >> r.rating;
 
     return r;
 }
