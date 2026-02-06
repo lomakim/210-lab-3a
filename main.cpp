@@ -25,6 +25,8 @@ int main(){
     cout << "**** RESTAURANT LOG **** \n\n";    // Banner
     r1 = addRestaurant();
 
+    printRestaurant(r1);
+
     return 0;
 }
 
@@ -35,7 +37,7 @@ Restaurant addRestaurant() {
     cout << "Name: ";
     getline (cin, r.name);
 
-    cout << "Cuisine: ";
+    cout << "Cuisine type: ";
     getline (cin, r.type);
 
     cout << "Address: ";
@@ -47,19 +49,20 @@ Restaurant addRestaurant() {
     cout << "State: ";
     getline (cin, r.state);
 
-    cout << "\tRating out of 5: ";
+    cout << "Rating out of 5: ";
     cin >> r.rating;
     while (r.rating > 5 || r.rating < 1) {
-        cout << "\n\tError! You entered a number out of bounds.\n";
-        cout << "\tPlease enter a rating 1-5: ";
+        cout << "\nError! You entered a number out of bounds.\n";
+        cout << "Please enter a rating 1-5: ";
         cin >> r.rating;
+        cout << endl;
     }
 
-    cout << "\tPricing (1 for low, 3 for expensive): ";
+    cout << "Pricing (1 for inexpensive, 3 for expensive): ";
     cin >> r.price;
     while (r.price > 3 || r.rating < 1) {
-        cout << "\n\tError! You entered a number out of bounds.\n";
-        cout << "\tPlease enter a pricing 1-3: ";
+        cout << "\nError! You entered a number out of bounds.\n";
+        cout << "Please enter a pricing 1-3: ";
         cin >> r.price;
     }
 
@@ -69,12 +72,15 @@ Restaurant addRestaurant() {
 void printRestaurant(const Restaurant &r){
     // This function prints restaurant information
 
-    cout << "\t" << r.name << endl;
-    cout << "\tAddress:\n";
+    cout << "\nHeres info about " << r.name << ": " << endl << endl;
+    cout << "Address:\n";
     cout << r.address << endl
-         << r.city << ", " << r.state;
-    cout << "\tRating: " << r.rating << "/5\n"
-    cout << "\tPricing: ";
-    for (int i = 0; i < r.rating; i+_)
-        cout <<
+         << r.city << ", " << r.state << endl << endl;
+    cout << "Cuisine: " << r.type << endl;
+    cout << "Rating: " << r.rating << "/5\n";
+    cout << "Pricing: ";
+    for (int i = 0; i < r.price; i++) {
+        cout << "$";
+    }
+    cout << endl;
 }
