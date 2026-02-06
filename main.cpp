@@ -20,12 +20,20 @@ void printRestaurant(const Restaurant&);
 
 int main(){
     // Declarations
-    Restaurant r1;
+    Restaurant r1, r2, r3, r4;
 
-    cout << "**** RESTAURANT LOG **** \n\n";    // Banner
+    cout << "**** RESTAURANT LOG ****";    // Banner
     r1 = addRestaurant();
-
     printRestaurant(r1);
+
+    r2 = addRestaurant();
+    printRestaurant(r2);
+
+    r3 = addRestaurant();
+    printRestaurant(r3);
+
+    r4 = addRestaurant();
+    printRestaurant(r4);
 
     return 0;
 }
@@ -33,7 +41,8 @@ int main(){
 Restaurant addRestaurant() {
     // This function collects user input about a Restaurant
     Restaurant r;
-    cout << "Please enter the following information about the restaurant:\n";
+    cout << "\n\nPlease enter the following information about the restaurant:\n";
+
     cout << "Name: ";
     getline (cin, r.name);
 
@@ -66,13 +75,15 @@ Restaurant addRestaurant() {
         cin >> r.price;
     }
 
+    cin.ignore();
+
     return r;
 }
 
 void printRestaurant(const Restaurant &r){
     // This function prints restaurant information
 
-    cout << "\nHeres info about " << r.name << ": " << endl << endl;
+    cout << "\n\nHeres the info entered about " << r.name << ": " << endl << endl;
     cout << "Address:\n";
     cout << r.address << endl
          << r.city << ", " << r.state << endl << endl;
