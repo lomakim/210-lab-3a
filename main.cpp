@@ -45,14 +45,19 @@ Restaurant addRestaurant() {
 
     cout << "\tRating out of 5: ";
     cin >> r.rating;
-    if (r.rating > 5 || r.rating < 0) {
-        cout << "\tError! You entered a number out of bounds.\n";
+    while (r.rating > 5 || r.rating < 1) {
+        cout << "\n\tError! You entered a number out of bounds.\n";
         cout << "\tPlease enter a rating 1-5: ";
-        cin >> r.rating
+        cin >> r.rating;
     }
 
-    cout << "\tPrice out of 3: ";
+    cout << "\tPricing (1 for low, 3 for expensive): ";
     cin >> r.price;
+    while (r.price > 3 || r.rating < 1) {
+        cout << "\n\tError! You entered a number out of bounds.\n";
+        cout << "\tPlease enter a pricing 1-3: ";
+        cin >> r.price;
+    }
 
     return r;
 }
