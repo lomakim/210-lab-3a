@@ -9,11 +9,14 @@ using namespace std;
 // Restaurant struct stores name, cuisine type, address, and rating
 struct Restaurant {
     string name, type, address, city, state;
+    int zip;
     double rating;
     int price;
 };
 
+// FUNCTION PROTOTYPES
 Restaurant addRestaurant();
+void printRestaurant(const Restaurant&);
 
 int main(){
     // Declarations
@@ -26,21 +29,22 @@ int main(){
 }
 
 Restaurant addRestaurant() {
+    // This function collects user input about a Restaurant
     Restaurant r;
     cout << "Please enter the following information about the restaurant:\n";
-    cout << "\tName: ";
+    cout << "Name: ";
     getline (cin, r.name);
 
-    cout << "\tCuisine: ";
+    cout << "Cuisine: ";
     getline (cin, r.type);
 
-    cout << "\tAddress: ";
+    cout << "Address: ";
     getline (cin, r.address);
 
-    cout << "\tCity: ";
+    cout << "City: ";
     getline (cin, r.city);
 
-    cout << "\tState: ";
+    cout << "State: ";
     getline (cin, r.state);
 
     cout << "\tRating out of 5: ";
@@ -60,4 +64,17 @@ Restaurant addRestaurant() {
     }
 
     return r;
+}
+
+void printRestaurant(const Restaurant &r){
+    // This function prints restaurant information
+
+    cout << "\t" << r.name << endl;
+    cout << "\tAddress:\n";
+    cout << r.address << endl
+         << r.city << ", " << r.state;
+    cout << "\tRating: " << r.rating << "/5\n"
+    cout << "\tPricing: ";
+    for (int i = 0; i < r.rating; i+_)
+        cout <<
 }
